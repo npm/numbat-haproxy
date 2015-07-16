@@ -9,7 +9,8 @@ nconf
     uri:      { alias: 'u' },
     hostname: { alias: 'h' },
     socket:   { alias: 's' },
-    config:   { alias: 'c' }
+    config:   { alias: 'c' },
+    interval: { alias: 'i' }
   });
 
 config = nconf.get('config');
@@ -33,5 +34,6 @@ if (nconf.get('help')) {
 var producer = new HAProxyProducer({
   uri: nconf.get('uri'),
   node: nconf.get('hostname') || os.hostname(),
-  haproxy: nconf.get('socket')
+  haproxy: nconf.get('socket'),
+  interval: nconf.get('interval')
 });
