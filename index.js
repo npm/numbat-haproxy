@@ -16,6 +16,18 @@ var HAProxyProducer = module.exports = function(options) {
     haproxy.stat('-1', '-1', '-1', function (err, info) {
       if (err) {
         logger.error('error while trying to retrieve HAProxy stats', err);
+
+        emitter.metric({
+          name: 'haproxy.error',
+          metric: 1.0,
+          status: 'critical',
+          meta: {
+            socket: options.haproxy,
+            code: err.code,
+            message: err.message
+          }
+        });
+
         return;
       }
 
