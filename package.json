@@ -14,10 +14,11 @@
   },
   "license": "MIT",
   "dependencies": {
+    "bole": "~2.0.0",
     "haproxy": "0.0.4",
+    "nconf": "~0.6.9",
     "numbat-emitter": "0.0.1",
-    "optimist": "~0.6.0",
-    "nconf": "~0.6.9"
+    "optimist": "~0.6.0"
   },
   "bin": {
     "numbat-haproxy": "./bin/numbat-haproxy"

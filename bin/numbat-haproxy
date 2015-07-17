@@ -2,7 +2,13 @@
 var os = require('os');
 var HAProxyProducer = require('../');
 var nconf = require('nconf');
+var bole = require('bole');
 var config;
+
+bole.output({
+  level: 'info',
+  stream: process.stdout
+});
 
 nconf
   .argv({

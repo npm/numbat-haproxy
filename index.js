@@ -1,3 +1,4 @@
+var bole = require('bole');
 var HAProxy = require('haproxy');
 var NumbatEmitter = require('numbat-emitter');
 
@@ -7,10 +8,17 @@ var HAProxyProducer = module.exports = function(options) {
   var emitter = new NumbatEmitter(options);
   setInterval(produce, options.interval || DEFAULT_INTERVAL);
 
+  var logger = options.logger || bole('numbat-haproxy');
+
   var haproxy = new HAProxy(options.haproxy);
 
   function produce() {
     haproxy.stat('-1', '-1', '-1', function (err, info) {
+      if (err) {
+        logger.error('error while trying to retrieve HAProxy stats', err);
+        return;
+      }
+
       info.forEach(function (section) {
         if (section.pxname === 'stats') {
           return;
