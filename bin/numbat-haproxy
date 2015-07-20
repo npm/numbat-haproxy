@@ -32,6 +32,7 @@ if (nconf.get('help')) {
     '  -u, --uri       numbat-collector or numbat-analyzer URI',
     '  -s, --socket    HAProxy stat socket',
     '  -h, --hostname  Hostname (defaults to ' + os.hostname() + ')',
+    '  -i, --interval  How often to emit metrics',
     '      --help      You\'re staring at it'
   ].join('\n') + '\n');
   process.exit();
