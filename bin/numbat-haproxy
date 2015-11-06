@@ -40,7 +40,7 @@ if (nconf.get('help')) {
 
 var producer = new HAProxyProducer({
   uri: nconf.get('uri'),
-  node: nconf.get('hostname') || os.hostname(),
+  app: 'haproxy',
   haproxy: nconf.get('socket'),
   interval: nconf.get('interval')
 });
