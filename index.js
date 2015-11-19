@@ -30,7 +30,6 @@ var HAProxyProducer = module.exports = function(options) {
         if (section.qcur) {
           emitter.metric({
             name: service + '.queued-requests',
-            description: 'Queued requests',
             value: parseInt(section.qcur, 10)
           });
         }
@@ -38,7 +37,6 @@ var HAProxyProducer = module.exports = function(options) {
         if (section.bin) {
           emitter.metric({
             name: service + '.bytes-in',
-            description: 'Bytes in',
             value: parseInt(section.bin, 10)
           });
         }
@@ -46,7 +44,6 @@ var HAProxyProducer = module.exports = function(options) {
         if (section.bout) {
           emitter.metric({
             name: service + '.bytes-out',
-            description: 'Bytes out',
             value: parseInt(section.bout, 10)
           });
         }
@@ -54,7 +51,6 @@ var HAProxyProducer = module.exports = function(options) {
         if (section.rate) {
           emitter.metric({
             name: service + '.rate',
-            description: 'Request rate',
             value: parseInt(section.rate, 10)
           });
         }
@@ -62,7 +58,6 @@ var HAProxyProducer = module.exports = function(options) {
         if (section.ereq) {
           emitter.metric({
             name: service + '.request-errors',
-            description: 'Request errors',
             value: parseInt(section.ereq, 10)
           });
         }
@@ -70,7 +65,6 @@ var HAProxyProducer = module.exports = function(options) {
         if (section.econ) {
           emitter.metric({
             name: service + '.connection-errors',
-            description: 'Connection errors',
             value: parseInt(section.econ, 10)
           });
         }
@@ -78,7 +72,6 @@ var HAProxyProducer = module.exports = function(options) {
         if (section.eresp) {
           emitter.metric({
             name: service + '.response-errors',
-            description: 'Response errors',
             value: parseInt(section.eresp, 10)
           });
         }
@@ -86,7 +79,6 @@ var HAProxyProducer = module.exports = function(options) {
         if (section.hrsp_1xx) {
           emitter.metric({
             name: service + '.http-1xx',
-            description: '1xx HTTP responses',
             value: parseInt(section.hrsp_1xx, 10)
           });
         }
@@ -94,7 +86,6 @@ var HAProxyProducer = module.exports = function(options) {
         if (section.hrsp_2xx) {
           emitter.metric({
             name: service + '.http-2xx',
-            description: '2xx HTTP responses',
             value: parseInt(section.hrsp_2xx, 10)
           });
         }
@@ -102,7 +93,6 @@ var HAProxyProducer = module.exports = function(options) {
         if (section.hrsp_3xx) {
           emitter.metric({
             name: service + '.http-3xx',
-            description: '3xx HTTP responses',
             value: parseInt(section.hrsp_3xx, 10)
           });
         }
@@ -110,7 +100,6 @@ var HAProxyProducer = module.exports = function(options) {
         if (section.hrsp_4xx) {
           emitter.metric({
             name: service + '.http-4xx',
-            description: '4xx HTTP responses',
             value: parseInt(section.hrsp_4xx, 10)
           });
         }
@@ -118,7 +107,6 @@ var HAProxyProducer = module.exports = function(options) {
         if (section.hrsp_5xx) {
           emitter.metric({
             name: service + '.http-5xx',
-            description: '5xx HTTP responses',
             value: parseInt(section.hrsp_5xx, 10)
           });
         }
