@@ -6,7 +6,7 @@ var DEFAULT_INTERVAL = 1000;
 
 var HAProxyProducer = module.exports = function(options) {
   var emitter = new NumbatEmitter(options);
-  emitter.metric('monitor.start');
+  emitter.metric('haproxy.monitor.start');
   setInterval(produce, options.interval || DEFAULT_INTERVAL);
 
   var logger = options.logger || bole('numbat-haproxy');
