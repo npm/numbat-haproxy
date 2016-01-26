@@ -10,8 +10,9 @@ var HAProxyProducer = module.exports = function(options) {
   setInterval(produce, options.interval || DEFAULT_INTERVAL);
 
   var logger = options.logger || bole('numbat-haproxy');
+  
+  var haproxy;
 
-  var haproxy = new HAProxy(options.haproxy);
 
   // HAProxy only gives us the total amount of requests in many cases (like
   // all the status code stats), so keep the previous bundle we get and do
@@ -19,6 +20,14 @@ var HAProxyProducer = module.exports = function(options) {
   var previous;
 
   function produce() {
+    if(!haproxy) {
+      try{
+        haproxy = new HAProxy(options.haproxy);
+      } catch(e){
+        console.error('haproxy error: haproxy may not be installed on this server. ',e)
+        return 
+      }     
+    }
     haproxy.stat('-1', '-1', '-1', function (err, info) {
       if (err) {
         logger.error('error while trying to retrieve HAProxy stats', err);
