@@ -27,7 +27,6 @@ var HAProxyProducer = module.exports = function(options) {
 
       info.forEach(function (section) {
         function delta(stat) {
-          if (!previous) throw new Error('No previous stats bundle available');
           var previousSection = previous.filter(function (previousSection) {
             return previousSection.pxname === section.pxname &&
                    previousSection.svname === section.svname;
