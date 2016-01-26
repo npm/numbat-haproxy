@@ -17,7 +17,7 @@
     "bole": "~2.0.0",
     "haproxy": "~0.2.0",
     "nconf": "~0.6.9",
-    "numbat-emitter": "~2.3.0",
+    "numbat-emitter": "~2.3.1",
     "optimist": "~0.6.0"
   },
   "bin": {
