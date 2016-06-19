@@ -14,7 +14,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "bole": "~2.0.0",
+    "bole": "~3.0.1",
     "haproxy": "~0.2.0",
     "nconf": "~0.6.9",
     "numbat-emitter": "~2.3.1",
