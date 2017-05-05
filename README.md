@@ -1,4 +1,6 @@
 # godot-haproxy
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/numbat-metrics/numbat-haproxy.svg)](https://greenkeeper.io/)
 HAProxy producer for Godot.
 
 ## Installation
